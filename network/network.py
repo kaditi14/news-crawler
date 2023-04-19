@@ -49,7 +49,7 @@ class NetworkFetcher(object):
 
     def fetch(self, url):
         try:
-            response = self._connection.get(url, timeout=self.config.http_timeout, headers=self.headers)
+            response = self._connection.get(url, timeout=self.config.http_timeout, headers=self.headers, verify = False)
         except Exception:
             return None
         if response.ok:
